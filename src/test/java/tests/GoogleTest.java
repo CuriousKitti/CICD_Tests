@@ -31,6 +31,11 @@ public class GoogleTest {
 		boolean signoff = driver.findElement(By.linkText("SIGN-OFF")).isDisplayed();
 		Assert.assertTrue(signoff);
 	}
+	@Test
+	public void LogoTest() 
+	{
+		System.out.println("Logo Test");
+	}
 	
 	
 	@AfterTest
