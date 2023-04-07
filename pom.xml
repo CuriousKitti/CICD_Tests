@@ -4,6 +4,10 @@
 	<artifactId>CICD_tests</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RunUnitTestsInJenkins</name>
+	<properties>
+		<username>"admin"</username>
+		<password>"admin"</password>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -24,9 +28,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0</version>
 				<configuration>
-					<systemPropertyVariables>
-						<propertyName>firefox</propertyName>
-					</systemPropertyVariables>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
 				</configuration>
 			</plugin>
 		</plugins>

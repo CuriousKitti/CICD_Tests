@@ -2,7 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 public class GoogleTitleTest {
 
 	WebDriver driver;
+	
 	@BeforeTest
 	public void setUp() 
 	{
@@ -18,12 +19,13 @@ public class GoogleTitleTest {
 		driver.manage().window().maximize();
 		driver.get("https://www.google.com");
 		
+		
 	}
 	
 	@Test
 	public void titleTest() 
 	{
-		Assert.assertEquals(driver.getTitle(), "Google"); 
+		AssertJUnit.assertEquals(driver.getTitle(), "Google"); 
 	}
 	
 	

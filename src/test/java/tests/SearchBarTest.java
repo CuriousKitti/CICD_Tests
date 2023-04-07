@@ -3,7 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -24,7 +24,7 @@ public class SearchBarTest {
 	@Test
 	public void titleTest() 
 	{
-		Assert.assertTrue(driver.findElement(By.name("q")).isDisplayed());  
+		AssertJUnit.assertTrue(driver.findElement(By.name("q")).isDisplayed());  
 	}
 	
 	

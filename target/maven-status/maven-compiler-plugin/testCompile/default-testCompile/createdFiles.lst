@@ -1,1 +1,3 @@
+tests/SearchBarTest.class
 tests/GoogleTest.class
+tests/GoogleTitleTest.class
