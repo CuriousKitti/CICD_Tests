@@ -1,25 +1,23 @@
-pipeline {
-  agent any
-  stages {
-    stage('Run a command') {
-      steps {
-        sh '''pwd
-date
-echo "${BUILD_ID}"'''
-      }
+pipeline{
+    agent any
+    tools{
+        maven 'Maven'
     }
-
-    stage('Print a Message') {
-      steps {
-        echo 'This is new step'
-      }
+    
+    stages{
+        
+        stage('Checkout'){
+            steps{
+                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'MyGitHub', url: 'https://github.com/CuriousKitti/CICD_Tests.git']])
+            }
+        }
+        stage('Build'){
+            steps{
+                sh 'mvn clean install'
+            }
+            
+        }
+        
     }
-
-    stage('Build') {
-      steps {
-        sleep 10
-      }
-    }
-
-  }
+    
 }
